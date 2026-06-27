@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "concurrently \"npm run server\" \"npm run frontend\"",
     "frontend": "vite",
-    "server": "cd server && npm run dev"
+    "server": "cd server && npm run dev",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.12.0",
