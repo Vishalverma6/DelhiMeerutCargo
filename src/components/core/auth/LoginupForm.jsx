@@ -33,13 +33,13 @@ const LoginupForm = () => {
         event.preventDefault();
         dispatch(login(email,password,navigate))
         
-        console.log("priniting the form Data:", formData);
+        // console.log("priniting the form Data:", formData);
         
     }
 
 
     return (
-        <div className='full mt-6'>
+        <div className='full mt-5'>
             <form onSubmit={submitHandler} 
             className=' flex flex-col pb-8 space-y-5'
             >

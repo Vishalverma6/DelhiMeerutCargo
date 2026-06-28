@@ -36,7 +36,7 @@ exports.resetPasswordToken = async (req, res) => {
         );
 
         // create url
-        const url = `https://delhimeerutcargo.com/update-password/${token}`;
+        const url = `http:delhimeerutcargo.com/update-password/${token}`;
 
         // send email containing the url
         await mailSender(email,

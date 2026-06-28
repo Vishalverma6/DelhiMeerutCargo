@@ -71,7 +71,7 @@ exports.resetPasswordLink = (firstName, lastName, url) => {
     <body>
         <div class="container">
            <a href="https://delhimeerutcargo.com"><img class="logo"
-           src="" alt="Medical Pramarsh Logo">  
+           src="" alt="Delhi Meerut Cargo Logo">  
            </a>
            <div class="name">Delhi Meerut Cargo</div>
            <div class="message">Password Reset Link </div>

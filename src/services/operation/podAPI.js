@@ -23,7 +23,7 @@ export const uploadPOD = async (data, token, navigate) => {
             Authorization: `Bearer ${token}`,
         })
 
-        console.log("UPLOAD_POD_API...RESPONSE..", response);
+        // console.log("UPLOAD_POD_API...RESPONSE..", response);
         if (!response?.data?.success) {
             throw new Error("Could not Uplaod POD")
         }
@@ -32,10 +32,10 @@ export const uploadPOD = async (data, token, navigate) => {
         result = response?.data;
         // console.log("result", result);
 
-        // navigate("/report-submitted");
 
     } catch (error) {
-        console.log("UPLOAD_POD_API API ERROR...", error);
+        console.error(error);
+        // console.log("UPLOAD_POD_API API ERROR...", error);
         toast.error(error?.response?.data?.message)
     }
     toast.dismiss(toastId);

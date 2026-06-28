@@ -22,11 +22,16 @@ import PendingStaff from './components/core/staff/PendingStaff';
 import OpenRoute from './components/core/auth/OpenRoute';
 import VerifyEmail from './pages/VerifyEmail';
 import ApprovedRoute from './components/core/auth/ApprovedRoute';
+import { useSelector } from 'react-redux';
+import { ACCOUNT_TYPE } from './utils/constant';
+import ForgotPassword from './pages/ForgotPassword';
+import UpdatePassword from './pages/UpdatePassword';
+import ConfirmationPage from './pages/ConfirmationPage';
 
 
 function App() {
 
-
+  const { user } = useSelector((state) => state.profile)
   return (
     <>
       <div>
@@ -38,6 +43,31 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<Signup />} />
 
+          <Route
+            path='/forgot-password'
+            element={
+              <OpenRoute>
+                <ForgotPassword />
+              </OpenRoute>
+            } />
+
+            <Route
+            path='/update-password/:token'
+            element={
+              <OpenRoute>
+                <UpdatePassword />
+              </OpenRoute>
+
+            } />
+
+            <Route
+            path='/confirmation'
+            element={
+              <OpenRoute>
+                <ConfirmationPage />
+              </OpenRoute>
+            }
+          />
           {/* <Route
             path="/verify-email"
             element={
@@ -75,10 +105,17 @@ function App() {
                 </ApprovedRoute>
               }
             />
-            <Route path='/dashboard/pending-client' element={<PendingClient />} />
-            <Route path='/dashboard/approve-client' element={<ApproveClient />} />
-            <Route path='/dashboard/approved-staff' element={<ApprovedStaff />} />
-            <Route path='/dashboard/pending-staff' element={<PendingStaff />} />
+            {
+              user?.accountType === ACCOUNT_TYPE?.ADMIN && (
+                <>
+                  <Route path='/dashboard/pending-client' element={<PendingClient />} />
+                  <Route path='/dashboard/approve-client' element={<ApproveClient />} />
+                  <Route path='/dashboard/approved-staff' element={<ApprovedStaff />} />
+                  <Route path='/dashboard/pending-staff' element={<PendingStaff />} />
+                </>
+              )
+            }
+
 
           </Route>
         </Routes>

@@ -79,12 +79,12 @@ const SignupForm = () => {
     },
     {
       id: 2,
-      tabName: "Client",
+      tabName: "User",
       type: ACCOUNT_TYPE.CLIENT,
     },
   ]
   return (
-    <div className='w-full'>
+    <div className='w-full '>
       {/* tab */}
       <Tab tabData={tabData} field={accountType} setField={setAccountType} />
 

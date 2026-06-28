@@ -34,7 +34,7 @@ const VerifyEmail = () => {
             confirmPassword, otp, navigate));
     }
     return (
-        <div className='w-full h-screen bg-gradient-to-br from-indigo-100 to-gray-100 '>
+        <div className='w-full h-screen bg-gradient-to-br pt-20 from-indigo-100 to-gray-100 '>
             <div className='flex items-center justify-center pt-20 '>
                 {
                     loading ? (
@@ -68,8 +68,10 @@ const VerifyEmail = () => {
                                         gap: "0 6px"
                                     }}
                                 />
-                                <button className='w-full bg-yellow-500 cursor-pointer py-[12px] px-[12px] rounded-[8px]
-                                    mt-6  text-black font-semibold'>
+                                <button
+                                    disabled={otp.length !== 6 || loading}
+                                    className="w-full bg-yellow-500 py-3  mt-6  cursor-pointer rounded-lg disabled:opacity-50"
+                                >
                                     Verify Email
                                 </button>
                             </form>

@@ -5,7 +5,7 @@ import logo from "../../../assets/logo.png"
 
 const Template = ({ title, desc1, desc2, image1, formtype }) => {
     return (
-        <div className='flex w-11/12 max-w-[1100px] min-h-screen justify-between items-center py-12 mt-7 md:gap-x-36 bg-gradient-to-l from-blue-50 '>
+        <div className='flex w-11/12 max-w-[1100px] min-h-screen justify-between items-center py-12 pt-28 md:pt-2 mt-7 md:gap-x-36 bg-gradient-to-l from-blue-50 '>
 
             {/* Left Section */}
             <div className='mx-auto w-full  max-w-[500px] md:mx-0 px-10 sm:mt-20 '>
@@ -19,13 +19,9 @@ const Template = ({ title, desc1, desc2, image1, formtype }) => {
                     />
                 </div> */}
 
-                {/* Heading */}
-                <h1 className='text-2xl md:text-3xl font-bold leading-tight text-[#0A2A66]'>
-                    Welcome Back to
-                </h1>
 
-                <h1 className='text-2xl md:text-3xl font-bold text-[#F97316] mt-1'>
-                    Delhi Meerut Cargo
+                <h1 className='text-2xl md:text-3xl opacity-70 font-bold text-[#F97316] mt-1'>
+                    <span>{title}</span>
                 </h1>
 
                 {/* Description */}

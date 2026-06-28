@@ -139,7 +139,7 @@ exports.deletePOD = async (req, res) => {
     try {
         // fetched the lr Number froom req body
         const { lrNumber } = req.body;
-        console.log("lr", lrNumber);
+        // console.log("lr", lrNumber);
         
 
         // validation

@@ -4,7 +4,7 @@ import loginImage from "../assets/loginImage.png"
 
 const Login = () => {
   return (
-    <div className='flex justify-center h-screen  bg-gradient-to-b from-indigo-100 to-gray-100 pt-10'>
+    <div className='flex  justify-center h-screen  bg-gradient-to-b from-indigo-100 to-gray-100 pt-24 md:pt-2'>
       <Template
         title="Welcome Back to Delhi Meerut Cargo"
         desc1="Access your account to track shipments, view POD documents, and manage your transport services easily."

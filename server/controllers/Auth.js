@@ -48,7 +48,7 @@ exports.sendOTP = async(req, res) => {
 
         // create an entry for OTP in database
         const otpBody = await OTP.create(otpPayload);
-        console.log("otpbody2", otpBody);
+        // console.log("otpbody2", otpBody);
 
         // return response 
         return res.status(200).json({
@@ -108,11 +108,11 @@ exports.signup = async(req, res) => {
             });
         }
 
-        console.log("email", email);
+        // console.log("email", email);
         
         // find the most recent OTP stored for the user
-        const recentOtp = await OTP.findOne({ email })
-        console.log("recent OTP", recentOtp);
+        const recentOtp = await OTP.findOne({ email }).sort({ createdAt: -1 });
+        // console.log("recent OTP", recentOtp);
 
         // validate Otp
         if (!recentOtp) {
@@ -288,3 +288,21 @@ exports.changePassword = async(req, res) => {
         })
     }
 }
+
+exports.logout = async (req, res) => {
+    try {
+        res.clearCookie("token", {
+            httpOnly: true,
+        });
+
+        return res.status(200).json({
+            success: true,
+            message: "Logged out successfully",
+        });
+    } catch (error) {
+        return res.status(500).json({
+            success: false,
+            message: "Logout failed",
+        });
+    }
+};
