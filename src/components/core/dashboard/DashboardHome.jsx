@@ -37,7 +37,7 @@ const DashboardHome = () => {
     }
   };
 
-  return (<div className="min-h-screen p-6">
+  return (<div className="min-h-screen mt-20 p-6">
     {/* Dashboard Title */} <div className="bg-white rounded-xl shadow-md p-4 max-w-xl mx-auto mb-8"> <h1 className="text-3xl font-bold text-center text-blue-900">
       {user?.accountType === "Client"
         ? "User Dashboard"
