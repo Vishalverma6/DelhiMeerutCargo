@@ -24,10 +24,15 @@ database.connect();
 app.use(express.json());
 app.use(cookieParser());
 
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://delhi-meerut-cargo.vercel.app",
+];
 
 app.use(
     cors({
-        origin:"*",
+        origin: allowedOrigins,
+        
         // http://localhost:5173
         credentials:true,
     })
