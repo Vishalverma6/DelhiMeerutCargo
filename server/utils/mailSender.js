@@ -3,27 +3,26 @@ require("dotenv").config();
 
 
 const mailSender = async (email, title, body) => {
-     console.log("mailSender called");
+    //  console.log("mailSender called");
     try {
-        console.log({
-            host: process.env.MAIL_HOST,
-            port: process.env.MAIL_PORT,
-            user: process.env.MAIL_USER,
-            passExists: !!process.env.MAIL_PASS,
-        });
-        
+        // console.log({
+        //     host: process.env.MAIL_HOST,
+        //     port: process.env.MAIL_PORT,
+        //     user: process.env.MAIL_USER,
+        //     passExists: !!process.env.MAIL_PASS,
+        // });
+
         let transporter = nodemailer.createTransport({
             host: process.env.MAIL_HOST,
-            port: process.env.MAIL_PORT,
-            secure: true, // Required for port 465
-            family: 4,
+            port: 465,
+            secure: true,
             auth: {
                 user: process.env.MAIL_USER,
                 pass: process.env.MAIL_PASS,
             }
         })
-        await transporter.verify();
-        console.log("SMTP Connected");
+        // await transporter.verify();
+        // console.log("SMTP Connected");
 
         let info = await transporter.sendMail({
             from: `"Delhi Meerut Cargo" <${process.env.MAIL_USER}>`,
