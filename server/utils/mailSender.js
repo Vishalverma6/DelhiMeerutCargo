@@ -1,3 +1,6 @@
+
+
+
 const nodemailer = require("nodemailer");
 require("dotenv").config();
 
@@ -5,17 +8,11 @@ require("dotenv").config();
 const mailSender = async (email, title, body) => {
     //  console.log("mailSender called");
     try {
-        // console.log({
-        //     host: process.env.MAIL_HOST,
-        //     port: process.env.MAIL_PORT,
-        //     user: process.env.MAIL_USER,
-        //     passExists: !!process.env.MAIL_PASS,
-        // });
 
         let transporter = nodemailer.createTransport({
             host: process.env.MAIL_HOST,
-            port: 465,
-            secure: true,
+            port: process.env.MAIL_PORT,
+             secure: false,
             auth: {
                 user: process.env.MAIL_USER,
                 pass: process.env.MAIL_PASS,
@@ -39,3 +36,5 @@ const mailSender = async (email, title, body) => {
 }
 
 module.exports = mailSender;
+
+
